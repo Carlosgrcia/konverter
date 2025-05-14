@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertidor de Documentos VUCEM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Convertidor de Documentos</h1>
+      <p class="subtitle">Divide documentos PDF en archivos menores a 3MB</p>
+    </header>
+
+    <main>
+      <section class="upload-section">
+        <div class="dropzone" id="dropzone">
+          <div class="dropzone-content">
+            <img src="upload-icon.svg" alt="Subir archivo" id="upload-icon">
+            <p>Arrastra aquí tus documentos o</p>
+            <label for="file-input" class="btn">Seleccionar archivo</label>
+            <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg,.tiff,.bmp" hidden>
+          </div>
+        </div>
+        
+        <div class="file-info" id="file-info" style="display: none;">
+          <div class="file-details">
+            <div id="file-name"></div>
+            <div id="file-size"></div>
+          </div>
+          <button class="btn btn-convert" id="convert-btn">Convertir</button>
+        </div>
+      </section>
+
+      <section class="processing-section" id="processing-section" style="display: none;">
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" id="progress-bar"></div>
+          </div>
+          <div class="progress-text" id="progress-text">Procesando documento...</div>
+        </div>
+      </section>
+
+      <section class="result-section" id="result-section" style="display: none;">
+        <h2>Documentos Procesados</h2>
+        <div class="result-files" id="result-files">
+          <!-- Los archivos resultantes se mostrarán aquí -->
+        </div>
+        <button class="btn btn-new" id="new-conversion-btn">Nueva conversión</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Convertidor VUCEM &copy; 2023 - Divide documentos PDF en archivos menores a 3MB</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html> 
